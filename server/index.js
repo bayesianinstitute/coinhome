@@ -2,10 +2,13 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import {createThread, addMessageToThread, runAssistant} from './openaiService.js';
+import morgan from 'morgan'
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(morgan('combined'));
 
 app.use(cors());
 
