@@ -1,0 +1,252 @@
+
+
+
+
+/*start: leftbar area*/
+.leftbar{
+    flex: 2.5;
+    /* background-color: #F0FF39; */
+    /* background: linear-gradient(to right, #ebef72, #4e4f32);  */
+    background: 
+    /* Grid pattern */
+    radial-gradient(circle, rgba(0, 0, 0, 0.2) 2px, transparent 1px),
+    radial-gradient(circle, rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+    /* Gradient background */
+    linear-gradient(to right, #e3e76f, #44462c);
+
+    background-position: 0 0, 5px 5px, 0 0;
+    background-size: 10px 10px, 10px 10px, 100%;
+    padding: 2rem 1rem;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.leftUpperBar{
+    padding: 2rem;
+    height: 80%;
+}
+.leftUpperTop{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.icon{
+    width: 40px;
+    height: 45px;
+    margin-right: 1rem;
+}
+.company{
+    font-size: 2rem;
+    font-weight:700;
+
+}
+.addChatBtn{
+    width: 40px;
+    height: 45px;
+    padding-right: 1rem;
+    /* background-color: #F0FF39; */
+}
+.newChat{
+    background: #f2eb65;
+    border: none; /* No border */
+    padding: 1.5rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    width: 25rem;
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.8rem; /* Font size */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow change */
+}
+.newChat:hover{
+    background: #f4efa8;
+}
+
+
+.msg{
+    display: flex;
+    justify-content: flex-start;
+    background-color: transparent;
+    font-size: 2rem;
+    padding: 1.5rem;
+    width: 25rem;
+    margin: 1rem auto;
+    border-radius: 0.6rem;
+    border: 2px solid rgb(179, 174, 174)
+}
+.msg>img{
+    margin-right: 2rem;
+    object-fit: cover;
+    height: 2rem;
+}
+.msgIcon{
+    width: 50px;
+    height: 50px;
+}
+
+.listItem{
+    display: flex;
+    align-items: center;
+    margin: 0.75rem;
+    font-size: 1.5rem;
+}
+.listItemImg{
+    width: 30px;
+    height: 30px;
+    margin: 1rem;
+    padding-right: 1rem;
+
+
+}
+.leftBottomBar{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(163, 159, 159);
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+/*end: leftbar area*/
+
+/*start: rightbar area*/
+.rightbar{
+    flex: 9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* height: 100%; */
+
+    margin: 8rem 10rem;
+    margin-bottom: 0; 
+
+    
+}
+.conversation {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+.conversation img {
+    margin-right: 1rem;
+   
+}
+
+.conversation p {
+    /*background-color: #f3eceb; /* Light grey background for messages */
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 2.2rem;
+}
+.conversation.user p {
+    /* background-color:#f3eceb;  Light green for user messages */
+    align-self: flex-end;
+}
+
+.conversation.bot p {
+    background-color: #e6e6e0; /* Light grey for bot messages */
+    align-self: flex-start;
+}
+
+
+.chatIcon{
+    width: 50px;
+    height: 50px;
+}
+
+.sendIcon{
+    width: 30px;
+    height: 30px;
+}
+
+.chatArea {
+    /* flex-grow: 1; */
+    /* width: 100%; */
+    
+    width: 100%;
+    
+    /* padding: 2rem 4rem; Padding around chat content */
+    padding-bottom: 4rem; 
+    box-sizing: border-box;
+
+    overflow: auto;
+    overflow-y: scroll; /* Scrollable chat area */
+    scroll-behavior: smooth;
+    height: calc(100vh - 22rem);
+}
+
+
+.sendArea{
+    position: sticky;
+    margin-bottom: auto;
+    width: 100%; /* Adjust according to the margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    
+
+    /* position: fixed; */
+        /* bottom: 0;
+    right: 0; */
+    /* background: white; */
+}
+
+
+.inputArea {
+    display: flex;
+    align-items: center;
+    width: 70rem;
+    border-radius: 0.6rem;
+    padding: 0.5rem;
+
+}
+
+.inputArea textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+    outline: none;
+    resize: none; /* Disable manual resizing */
+    overflow-y: hidden; /* Hide overflow */
+    background-color: transparent;
+}
+
+/* This ensures that the textarea automatically resizes */
+.auto-resize-textarea {
+    min-height: 40px;
+    max-height: 200px; /* Set a max-height if needed */
+    line-height: 1.5;
+}
+
+.auto-resize-textarea::placeholder {
+    font-size: 2rem;
+}
+.inputArea>input, .send{
+    background-color: transparent;
+    border: none;
+}
+
+.inputArea, .send {
+    background: none;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+    padding: 0;
+}   
+
+.footer{
+    margin: 2rem 0;
+}
