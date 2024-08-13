@@ -36,7 +36,8 @@ const RightSection = ({allChats, setAllChats}) => {
 
         /*integrate with backend in here. User send a request to this endpoint, and specify the request method and content */
         try {
-            const response = await fetch('http://localhost:3000/api/openai', {
+            console.log(import.meta.env.VITE_SERVER_URL)
+            const response = await fetch(import.meta.env.VITE_SERVER_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json' //a standard HTTP header used to indicate the media type of the resource
@@ -117,7 +118,7 @@ const RightSection = ({allChats, setAllChats}) => {
                         <img src={send} alt='sendIcon' className='sendIcon'/>
                     </button>
                 </div>
-                <p className='footer'>Our chat assistant could make mistake, please check important information.</p>
+                <p className='footer'>Our chat assistant could make mistake, please check important information. {import.meta.env.VITE_SERVER_URL}</p>
             </div>
         </div>
   );

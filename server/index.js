@@ -14,13 +14,15 @@ app.use(cors({ origin: '*' }));
 
 app.use(express.json());
 
+app.get('/api', (req, res) => {
+  res.send('Hello, World!');
+});
+
 app.post('/api/openai', async(req, res)=>{ //asynchronous, meaning it will wait for the response before proceeding.
     try {
       const { prompt } = req.body;
-      console.log(prompt);
       // Create a new thread for the conversation
       const thread = await createThread();
-      console.log(thread);
       // Add the user's prompt as a message to the thread
       await addMessageToThread(thread.id, prompt);
        // Step 4: Run the assistant to get a response
