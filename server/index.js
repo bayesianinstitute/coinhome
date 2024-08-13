@@ -17,13 +17,15 @@ app.use(express.json());
 app.post('/api/openai', async(req, res)=>{ //asynchronous, meaning it will wait for the response before proceeding.
     try {
       const { prompt } = req.body;
-      
+      console.log(prompt);
       // Create a new thread for the conversation
       const thread = await createThread();
+      console.log(thread);
       // Add the user's prompt as a message to the thread
       await addMessageToThread(thread.id, prompt);
        // Step 4: Run the assistant to get a response
       const responseText = await runAssistant(thread.id);
+      console.log(responseText);
 
     // Return the response to the client
     res.json({ message: responseText });
