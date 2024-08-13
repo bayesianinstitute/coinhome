@@ -36,7 +36,6 @@ const RightSection = ({allChats, setAllChats}) => {
 
         /*integrate with backend in here. User send a request to this endpoint, and specify the request method and content */
         try {
-            console.log(import.meta.env.VITE_SERVER_URL)
             const response = await fetch(import.meta.env.VITE_SERVER_URL, {
                 method: 'POST',
                 headers: {
@@ -118,7 +117,7 @@ const RightSection = ({allChats, setAllChats}) => {
                         <img src={send} alt='sendIcon' className='sendIcon'/>
                     </button>
                 </div>
-                <p className='footer'>Our chat assistant could make mistake, please check important information. {import.meta.env.VITE_SERVER_URL}</p>
+                <p className='footer'>Our chat assistant could make mistake, please check important information. </p>
             </div>
         </div>
   );
